@@ -10,6 +10,8 @@ gem 'devise'
 #Bootstrap
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
+#Real-time, stock data and historical pricing using the Google Finance API. 
+gem "stock_quote"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
