@@ -15,3 +15,8 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+  $("#stock-lookup-from").on("ajax:complete",function(event, data, status){
+    $("#resultados").html(data.responseText);
+  });
+});

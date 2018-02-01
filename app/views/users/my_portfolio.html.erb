@@ -1,12 +1,12 @@
-<h1>My Portfolio</h1>
+<h1>Meu Portfolio</h1>
 <h3>Buscar Ações</h3>
 <div id="stock-lookup">
-  <%= form_tag search_stocks_path , method: :get, id: "stock-lookup-from" do %>
-  <div class="form-group row no-padding text-center col-md-12">
-    <div class="col-md-10">
+  <%= form_tag search_stocks_path , remote: true , method: :get, id: "stock-lookup-from" do %>
+  <div class="form-group row no-padding text-center col-md-12 col-xs-10">
+    <div class="col-md-10 col-xs-8">
     <%= text_field_tag :stock, params[:stock], placeholder: "Stock Ticker Simbol", autofocus: true, class: "form-control search-box input-lg" %>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-2 col-xs-2">
       <%= button_tag( type: :submit, class: "btn btn-lg btn-success") do %>
         <i class="fa fa-search">Buscar Ações</i>
       <% end %>
@@ -14,8 +14,6 @@
   </div>
   <% end %>
   </div>
-  <div class="well results-block">
-    <strong>Simbolo:</strong> <%= @stock.ticker %>
-    <strong>Nome:</strong> <%= @stock.name %>
-    <strong>Preco:</strong> <%= @stock.last_price%>
+  <div id="resultados">
+    <%= render 'users/result' %>
   </div>
